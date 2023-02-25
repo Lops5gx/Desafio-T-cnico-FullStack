@@ -8,9 +8,9 @@ class SimulationRepository implements SimulationInterface{
     private $Instituitionstaxes;
 
     public function init(float $loanValue, array $convention = null, array $instituition = null, int $instalment = null){
-        
+
         $this->Instituitionstaxes = $this->getInstituitionstaxes();
-        $result = $this->startCalculation($loanValue);
+        $result = $this->startCalculation($loanValue, $convention, $instituition, $instalment);
 
         return $result;
 
@@ -22,7 +22,7 @@ class SimulationRepository implements SimulationInterface{
         foreach ($this->Instituitionstaxes as $taxes) {
             $result[$taxes->instituicao][] = [
                 "taxa"            => $taxes->taxaJuros,
-                "parcelas"        => $taxes->parcelas,
+                "parcelas"        => $instalment ? $instalment : $taxes->parcelas,
                 "valor_parcela"   => round($loanValue * $taxes->coeficiente, 2),
                 "convenio"        => $taxes->convenio,
             ];                

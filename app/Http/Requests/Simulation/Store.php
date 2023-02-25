@@ -12,8 +12,6 @@ use Illuminate\Support\Arr;
 class Store extends FormRequest
 {
 
-    private $allConvention;
-    private $allInstituitions;
 
     /**
      * Determine if the user is authorized to make this request.
