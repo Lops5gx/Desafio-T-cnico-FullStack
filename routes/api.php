@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\InstituitionsController;
+use App\Http\Controllers\ConventionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+# getAllInstituitions
+Route::get('/instituitions', [InstituitionsController::class, 'Index']);
+
+# getAllInstituitions
+Route::get('/convention', [ConventionController::class, 'Index']);
