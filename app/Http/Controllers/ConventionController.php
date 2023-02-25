@@ -10,11 +10,19 @@ class ConventionController extends Controller
 {
     private $convention;
 
+    /**
+    * @param ConventionInterface $convention
+    * @return Void
+   */
     public function __Construct(ConventionInterface $convention){
         $this->convention = $convention;
     }
 
-
+   /**
+    * Get all conventions
+    * @param Index $request
+    * @return response
+   */
     public function Index(Index $request){
 
         try{

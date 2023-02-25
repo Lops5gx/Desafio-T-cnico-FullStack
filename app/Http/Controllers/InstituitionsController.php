@@ -10,11 +10,19 @@ class InstituitionsController extends Controller
 {
     private $instituitions;
 
+    /**
+    * @param InstituitionsInterface $instituitions
+    * @return Void
+   */
     public function __Construct(InstituitionsInterface $instituitions){
         $this->instituitions = $instituitions;
     }
 
-
+    /**
+    * Get all instituitions
+    * @param Index $request
+    * @return response
+   */
     public function Index(Index $request){
 
         try{

@@ -7,6 +7,14 @@ class SimulationRepository implements SimulationInterface{
 
     private $Instituitionstaxes;
 
+    /**
+    * Start the calculations of taxes to all instituitions and their conventions
+    * @param Float $loanValue
+    * @param Array|Null $convention
+    * @param Array|Null $instituition
+    * @param Int|Null $instalment
+    * @return Array $result
+   */
     public function init(float $loanValue, array $convention = null, array $instituition = null, int $instalment = null){
 
         $this->Instituitionstaxes = $this->getInstituitionstaxes();
@@ -16,6 +24,14 @@ class SimulationRepository implements SimulationInterface{
 
     }
 
+     /**
+    * Calculate the taxes to all instituitions and their conventions
+    * @param Float $loanValue
+    * @param Array|Null $convention
+    * @param Array|Null $instituition
+    * @param Int|Null $instalment
+    * @return Array $result
+   */
     private function startCalculation(float $loanValue, array $convention = null, array $instituition = null, int $instalment = null){
         $result = [];
         
@@ -30,6 +46,10 @@ class SimulationRepository implements SimulationInterface{
         return $result;
     }
 
+     /**
+    * Get all Instituitions Taxes
+    * @return Array $result
+   */
     private function getInstituitionstaxes(){
         return json_decode(\File::get(storage_path("app/public/files/taxas_instituicoes.json")));
     }

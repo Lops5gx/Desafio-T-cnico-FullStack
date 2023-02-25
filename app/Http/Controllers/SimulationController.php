@@ -10,11 +10,19 @@ class SimulationController extends Controller
 {
     private $simulation;
 
+    /**
+    * @param SimulationInterface $simulation
+    * @return Void
+   */
     public function __Construct(SimulationInterface $simulation){
         $this->simulation = $simulation;
     }
 
-
+    /**
+    * Simulate taxes for instituitions and their conventions
+    * @param Store $request
+    * @return response
+   */
     public function simulate(Store $request){
 
         try{
