@@ -9,8 +9,6 @@ class Utils
     const STATUS_CODE_400 = 400;
 
     public static function defaultReturn(mixed $data){
-        return response()->json([
-            'data' => $data,
-        ]);
+        return response($data, self::STATUS_CODE_200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8']);
     }
 }

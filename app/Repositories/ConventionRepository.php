@@ -7,7 +7,7 @@ use App\Interfaces\ConventionInterface;
 class ConventionRepository implements ConventionInterface
 {
     public function getConventions(){
-        return ['convenções'];
+        return \File::get(storage_path("app/public/files/convenios.json"));
     }   
 
 }

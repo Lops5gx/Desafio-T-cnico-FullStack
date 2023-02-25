@@ -8,7 +8,7 @@ class InstituitionsRepository implements InstituitionsInterface
 {
 
     public function getInstituitions(){
-        return ['instituições'];
+        return \File::get(storage_path("app/public/files/instituicoes.json"));
     }   
 
 }

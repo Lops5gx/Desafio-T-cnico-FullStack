@@ -15,6 +15,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->singleton('App\Interfaces\InstituitionsInterface', 'App\Repositories\InstituitionsRepository');
         $this->app->singleton('App\Interfaces\ConventionInterface',    'App\Repositories\ConventionRepository');
+        $this->app->singleton('App\Interfaces\SimulationInterface',    'App\Repositories\SimulationRepository');
     }
 
     /**
