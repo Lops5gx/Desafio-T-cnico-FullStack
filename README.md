@@ -6,5 +6,5 @@ Clone o projeto
 
 # Comandos:
 Execute o comando 
-*composer install
-*php artisan serve
+* composer install
+* php artisan serve
