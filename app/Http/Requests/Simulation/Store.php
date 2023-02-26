@@ -43,15 +43,15 @@ class Store extends FormRequest
 
         $convention = [];
         $instituition = [];
-
-        if(!empty($instituicoes)){
+        
+        if(!empty($this->instituicoes)){
             $instituition = $this->instituicoes;
         }
 
-        if(!empty($convenios)){
-            $convention = $this->convenios;
+        if(!empty($this->convenio)){
+            $convention = $this->convenio;
         }
-        
+
         $this->merge([
             'convenios' => $convention,
             'instituicoes' => $instituition
