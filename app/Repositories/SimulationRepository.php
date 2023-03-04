@@ -48,7 +48,6 @@ class SimulationRepository implements SimulationInterface{
         $result = $this->filterByConvention($convention, $result);
         $result = $this->filterByInstalment($instalment, $result);
         
-        dd($result);
         return $result;
     }
 
